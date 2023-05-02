@@ -1,4 +1,6 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faThumbsUp } from '@fortawesome/free-solid-svg-icons'
 
 const Chef = ({ chef }) => {
     const { name, picture, experience, likes, recipes } = chef
@@ -7,12 +9,14 @@ const Chef = ({ chef }) => {
         <div className="card w-96 bg-base-100 shadow-xl">
             <figure><img src={picture} alt="image" /></figure>
             <div className="card-body">
-                <h2 className="card-title">{name}</h2>
-                <p>Experience:{experience} years</p>
-                <p>Number of recipes:{recipes}+</p>
-                <p></p>
+
+                <h2 className="card-title font-extrabold text-xl">{name}</h2>
+                <p><span className='font-bold mr-2'>Experience:</span>{experience} years</p>
+                <p><span className='font-bold mr-2'>Number of recipes:</span>{recipes}+</p>
+                <p><FontAwesomeIcon className='mr-3 text-teal-500' icon={faThumbsUp} />{likes}</p>
+
                 <div className="card-actions justify-end">
-                    <button className="btn btn-primary">Buy Now</button>
+                    <button className="btn btn-primary">View Recipe</button>
                 </div>
             </div>
         </div>
