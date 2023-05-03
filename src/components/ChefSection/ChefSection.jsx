@@ -5,11 +5,11 @@ const ChefSection = () => {
     const [chefs, setChefs] = useState([]);
 
 
-    // useEffect(() => {
-    //     fetch('http://localhost:5000/chefdata')
-    //         .then(res => res.json())
-    //         .then(data => setChefs(data))
-    // }, [])
+    useEffect(() => {
+        fetch('http://localhost:5000/chefdata')
+            .then(res => res.json())
+            .then(data => setChefs(data))
+    }, [])
     return (
         <div className='mt-10' >
             <h3 className='text-5xl font-extrabold text-center mb-5 '>Chef Section</h3>

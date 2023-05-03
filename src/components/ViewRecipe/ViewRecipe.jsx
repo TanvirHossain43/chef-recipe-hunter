@@ -1,9 +1,21 @@
 import React from 'react';
+import { useLoaderData, useParams } from 'react-router-dom';
+import ChefDetails from '../../Pages/ChefDetails/ChefDetails';
 
 const ViewRecipe = () => {
+    const {id} = useParams()
+    const chefDetails = useLoaderData()
+    
     return (
         <div>
-            this is views of recipes
+           
+           {
+          chefDetails.map(detail => <ChefDetails
+          key={detail.id}
+          detail={detail}
+
+          ></ChefDetails>)
+           }
         </div>
     );
 };
