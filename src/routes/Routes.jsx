@@ -9,6 +9,8 @@ import Home from '../Pages/Home/Home';
 import Main from '../Layout/Main';
 import Blog from '../Pages/Blog/Blog';
 import Login from '../Pages/Login/Login';
+import ViewRecipe from '../components/ViewRecipe/ViewRecipe';
+import Register from '../Pages/Register/Register';
 
 
 
@@ -29,6 +31,19 @@ const router = createBrowserRouter([
       {
         path: "login",
         element: <Login></Login>
+      },
+      {
+        path:"recipes",
+        element:<ViewRecipe></ViewRecipe>
+      },
+      {
+        path:'chef:id',
+        element:<ViewRecipe></ViewRecipe>,
+        
+      },
+      {
+        path:'register',
+        element:<Register></Register>
       }
     ]
   },

@@ -1,6 +1,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faThumbsUp } from '@fortawesome/free-solid-svg-icons'
+import { Link } from 'react-router-dom';
 
 const Chef = ({ chef }) => {
     const { name, picture, experience, likes, recipes } = chef
@@ -16,7 +17,7 @@ const Chef = ({ chef }) => {
                 <p><FontAwesomeIcon className='mr-3 text-teal-500' icon={faThumbsUp} />{likes}</p>
 
                 <div className="card-actions justify-end">
-                    <button className="btn btn-primary">View Recipe</button>
+                    <button className="btn btn-primary"><Link to="/recipes">View Recipe</Link></button>
                 </div>
             </div>
         </div>
