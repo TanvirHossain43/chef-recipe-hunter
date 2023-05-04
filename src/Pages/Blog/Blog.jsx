@@ -1,6 +1,9 @@
 import React from 'react';
 
+
+
 const Blog = () => {
+    
     return (
         <div className='w-3/4 mx-auto mt-10 text-white'>
             <div className='mb-5 bg-slate-700 p-4 rounded-xl'>
@@ -19,6 +22,7 @@ const Blog = () => {
                 <h2 className=' font-bold text-lg mb-2'>What is a custom hook, and why will you create a custom hook? </h2>
                 <p> Custom hook is a JavaScript function which is used to shared logic function between different components.Custom hooks are created by combining existing hooks or using other JavaScript functionality, such as state, props, and context, to create a new hook that provides a specific functionality. The custom hook can be used just like any other React hook, by calling it from within a functional component</p>
             </div>
+            
         </div>
     );
 };

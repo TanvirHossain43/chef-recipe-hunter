@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHeart, faHeartCrack } from '@fortawesome/free-solid-svg-icons'
+import { faHeart, faHeartCrack,faStar,faStarHalfStroke } from '@fortawesome/free-solid-svg-icons'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -12,7 +12,7 @@ const Recipe = ({ recipe }) => {
 
     const handleButtonClick = () => {
         if (!selected) {
-            
+
             toast.success("Favourite item !!!", {
                 position: toast.POSITION.TOP_CENTER
             });
@@ -40,8 +40,22 @@ const Recipe = ({ recipe }) => {
                         </p>
                         <p><span className='text-lg font-bold mr-2'>Method:</span>{method}</p>
 
-                        <button className='mt-3' onClick={handleButtonClick}>{selected ? <FontAwesomeIcon className='text-5xl' icon={faHeart} /> : <FontAwesomeIcon className='text-5xl' icon={faHeartCrack} />} </button>
-                        <ToastContainer />
+                        <div className='flex items-center justify-evenly'>
+                            <div>
+                                <button className='mt-3' onClick={handleButtonClick}>{selected ? <FontAwesomeIcon className='text-5xl' icon={faHeart} /> : <FontAwesomeIcon className='text-5xl' icon={faHeartCrack} />} </button>
+                                <ToastContainer />
+                            </div>
+                            <div>
+                                <p>Rating: <span>
+                                <FontAwesomeIcon icon={faStar} />
+                                <FontAwesomeIcon icon={faStar} />
+                                <FontAwesomeIcon icon={faStar} />
+                                <FontAwesomeIcon icon={faStar} />
+                                <FontAwesomeIcon icon={faStarHalfStroke} />
+                                
+                                </span></p>
+                            </div>
+                        </div>
 
                     </div>
                 </div>

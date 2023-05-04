@@ -16,4 +16,4 @@ In this website you will find many chefs and popular food available in india .. 
 
 
 ## Live  Site
-https://exquisite-alpaca-629efa.netlify.app
+https://chef-recipe-hunter-500f4.web.app

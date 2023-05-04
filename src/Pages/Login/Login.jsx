@@ -77,7 +77,7 @@ const Login = () => {
                                 <label className="label">
                                     <span className="label-text">Password</span>
                                 </label>
-                                <input type="text" placeholder="password" className="input input-bordered" name='password' required />
+                                <input type="password" placeholder="password" className="input input-bordered" name='password' required />
                                 <p>New to this site? <Link to="/register" className='text-emerald-500'>Register</Link></p>
 
                             </div>

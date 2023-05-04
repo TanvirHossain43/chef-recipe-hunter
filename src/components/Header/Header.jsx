@@ -32,8 +32,8 @@ const Header = () => {
                 </div>
                 <div className="navbar-center hidden lg:flex text-xl">
 
-                    <NavLink to="/" className={({ isActive }) => (isActive ? activeLink : "")}>Home</NavLink>
-                    <NavLink to="/blog" className={({ isActive }) => (isActive ? activeLink : "")}>Blog</NavLink>
+                    <NavLink to="/" className={({ isActive }) => (isActive ? activeLink : " mr-3")}>Home</NavLink>
+                    <NavLink to="/blog" className={({ isActive }) => (isActive ? activeLink : "ml-3")}>Blog</NavLink>
 
 
 
@@ -46,7 +46,9 @@ const Header = () => {
                                 {user.photoURL ? <img src={user.photoURL} alt='Photo' title={user.displayName} /> : <img src='' alt='Photo' title={user.displayName} />}
                             </div>
                             <Link onClick={handleLogOut} className="btn">Logout</Link>
-                        </div> : <Link to="/login" className="btn">Login</Link>
+                        </div> 
+                        :
+                         <Link to="/login" className="btn">Login</Link>
                     }
 
 
