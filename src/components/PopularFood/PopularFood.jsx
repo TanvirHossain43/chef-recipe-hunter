@@ -5,7 +5,7 @@ import Food from './Food';
 const PopularFood = () => {
     const [foods, setFoods] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/popularfood')
+        fetch('https://chef-recipe-hunter-server-tanvirhossain43.vercel.app/popularfood')
             .then(res => res.json())
             .then(data => setFoods(data))
     }, [])

@@ -5,7 +5,7 @@ import Recipe from './Recipe';
 const Recipes = () => {
   const [recipes, setRecipes] = useState([])
   useEffect(() => {
-    fetch('http://localhost:5000/chef')
+    fetch('https://chef-recipe-hunter-server-tanvirhossain43.vercel.app/chef')
       .then(res => res.json())
       .then(data => setRecipes(data))
   }, [])

@@ -35,10 +35,10 @@ const Recipe = ({ recipe }) => {
                     <img src={foodurl} className="max-w-sm rounded-lg shadow-2xl" />
                     <div>
                         <h1 className="text-5xl font-bold">{name}</h1>
-                        <p className="py-6"><span>Ingredients:</span>
+                        <p className="py-6"><span className='text-lg font-bold mr-2'>Ingredients:</span>
                             {ingredients}
                         </p>
-                        <p><span>Method:</span>{method}</p>
+                        <p><span className='text-lg font-bold mr-2'>Method:</span>{method}</p>
 
                         <button className='mt-3' onClick={handleButtonClick}>{selected ? <FontAwesomeIcon className='text-5xl' icon={faHeart} /> : <FontAwesomeIcon className='text-5xl' icon={faHeartCrack} />} </button>
                         <ToastContainer />

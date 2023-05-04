@@ -5,6 +5,7 @@ import ChefDetails from '../../Pages/ChefDetails/ChefDetails';
 const ViewRecipe = () => {
    
     const chefDetails = useLoaderData()
+    console.log(chefDetails)
     
     return (
         <div>
