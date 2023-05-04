@@ -28,8 +28,8 @@ const ChefDetails = ({ detail }) => {
                     </div>
                 </div>
             </div>
-            <div>
-                <h2 className='text-center font-bold'>New Section</h2>
+            <div className='mt-10 '>
+                <h2 className='text-center font-bold text-5xl mb-5 text-orange-600'>Here are the recipes I offer ,You can try </h2>
                 <div>
                     <Recipes></Recipes>
                 </div>
