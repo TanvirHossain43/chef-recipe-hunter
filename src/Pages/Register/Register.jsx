@@ -38,7 +38,7 @@ const Register = () => {
             <div className="hero bg-base-200 min-h-screen">
                 <div className="w-3/5 mx-auto mt-4 p-4">
                     <div className="text-center">
-                        <h1 className="text-5xl font-bold">Login now!</h1>
+                        <h1 className="text-5xl font-bold">Register now!</h1>
 
                     </div>
                     <div className="  w-full max-w-sm shadow-2xl bg-base-100 mx-auto mt-5 rounded-xl">
@@ -69,7 +69,7 @@ const Register = () => {
                                 <input type="text" placeholder="photo URL" className="input input-bordered" name='photo' required />
 
                             </div>
-                            <p>{error}</p>
+                            <p className='text-red-600'>{error}</p>
                             <div className="form-control mt-6">
                                 <button className="btn btn-primary">SignUp</button>
                             </div>

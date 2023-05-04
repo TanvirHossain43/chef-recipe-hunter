@@ -1,9 +1,16 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../../Providers/AuthProviders';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+
 
 const Login = () => {
-    const { signInUser } = useContext(AuthContext)
+    
+    const { signInUser,googleSignIn,gitLogIn } = useContext(AuthContext)
+    const navigate = useNavigate()
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/'
+
+
 
     const handleLogin = event => {
         event.preventDefault();
@@ -16,11 +23,36 @@ const Login = () => {
             .then(result => {
                 const loggedUser = result.user;
                 console.log(loggedUser)
+                navigate(from, { replace: true })
             })
             .catch(error => {
                 console.log(error)
             })
 
+    }
+
+    const handleGoogleSignIn = () => {
+        googleSignIn()
+        .then(result =>{
+            const loggedUser = result.user;
+            console.log(loggedUser)
+            navigate(from, { replace: true })
+        })
+        .catch(error =>{
+            console.log(error)
+        })
+    }
+
+    const githubLogIn = () =>{
+        gitLogIn()
+        .then(result =>{
+            const loggedUser = result.user;
+            console.log(loggedUser)
+            navigate(from, { replace: true })
+        })
+        .catch(error =>{
+            console.log(error)
+        })
     }
 
     return (
@@ -44,7 +76,7 @@ const Login = () => {
                                     <span className="label-text">Password</span>
                                 </label>
                                 <input type="text" placeholder="password" className="input input-bordered" name='password' required />
-                                <p>New to this site? <Link to="/register">Register</Link></p>
+                                <p>New to this site? <Link to="/register" className='text-emerald-500'>Register</Link></p>
 
                             </div>
                             <div className="form-control mt-6">
@@ -54,10 +86,10 @@ const Login = () => {
                         <div className="divider">OR</div>
                         <div className='flex flex-col items-center gap-y-2 pb-5'>
                             <div>
-                                <button className="btn btn-outline btn-success">Login with Google</button>
+                                <button onClick={handleGoogleSignIn} className="btn btn-outline btn-success">Login with Google</button>
                             </div>
                             <div>
-                                <button className="btn btn-outline ">Login with Github</button>
+                                <button onClick={githubLogIn } className="btn btn-outline ">Login with Github</button>
                             </div>
                         </div>
                     </div>

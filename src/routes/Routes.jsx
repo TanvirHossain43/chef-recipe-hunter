@@ -12,6 +12,7 @@ import Login from '../Pages/Login/Login';
 import ViewRecipe from '../components/ViewRecipe/ViewRecipe';
 import Register from '../Pages/Register/Register';
 import ChefDetails from '../Pages/ChefDetails/ChefDetails';
+import PrivateRoutes from './PrivateRoutes/PrivateRoutes';
 
 
 
@@ -50,11 +51,11 @@ const router = createBrowserRouter([
   },
   {
     path: 'chef',
-    element: <Main></Main>,
+    element: <PrivateRoutes><Main></Main></PrivateRoutes>,
     children: [
       {
         path: ':id',
-        element: <ViewRecipe></ViewRecipe>,
+        element:<ViewRecipe></ViewRecipe>,
         loader: ({ params }) => fetch(`http://localhost:5000/chefdata/${params.id}`)
       },
       {
