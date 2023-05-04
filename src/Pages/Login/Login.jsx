@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { AuthContext } from '../../Providers/AuthProviders';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 
@@ -6,6 +6,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 const Login = () => {
     
     const { signInUser,googleSignIn,gitLogIn } = useContext(AuthContext)
+   
     const navigate = useNavigate()
     const location = useLocation();
     const from = location.state?.from?.pathname || '/'
@@ -79,6 +80,7 @@ const Login = () => {
                                 <p>New to this site? <Link to="/register" className='text-emerald-500'>Register</Link></p>
 
                             </div>
+                            
                             <div className="form-control mt-6">
                                 <button className="btn btn-primary">Login</button>
                             </div>

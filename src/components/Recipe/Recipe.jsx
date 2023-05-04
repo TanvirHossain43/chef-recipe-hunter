@@ -1,13 +1,17 @@
 import React, { useEffect } from 'react';
+import { useLoaderData } from 'react-router-dom';
 
-const Recipe = ({recipe}) => {
-const{chef} =recipe;
-console.log(chef)
+const Recipe = () => {
+
+    const recipes = useLoaderData()
+    console.log(recipes)
 
     return (
         <div>
-            hello
-            {chef}
+            {
+                recipes.map(recipe =><h2>{}</h2>)
+            }
+           
         </div>
     );
 };

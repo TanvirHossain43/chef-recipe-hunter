@@ -3,7 +3,7 @@ import { useLoaderData, useParams } from 'react-router-dom';
 import ChefDetails from '../../Pages/ChefDetails/ChefDetails';
 
 const ViewRecipe = () => {
-    const {id} = useParams()
+   
     const chefDetails = useLoaderData()
     
     return (

@@ -6,7 +6,7 @@ import Recipe from '../../components/Recipe/Recipe';
 
 const ChefDetails = ({ detail }) => {
     const { name, id, picture, experience, bio, likes, recipes } = detail;
-    const chefRecipes = useLoaderData()
+    
     return (
         <div>
             <div className="hero min-h-screen bg-base-200 " style={{ backgroundImage: `url("https://hips.hearstapps.com/hmg-prod/images/chicken-nugget-parm-casserole-1672785083.jpg?crop=1.00xw:0.750xh;0,0.250xh&resize=1200:*")` }}>
@@ -30,14 +30,7 @@ const ChefDetails = ({ detail }) => {
             <div>
                 <h2>New Section</h2>
                 <div>
-                    {
-                        chefRecipes.map(recipe =><Recipe 
-                        key={recipe.id}
-                        recipe={recipe}
-                        >
-
-                        </Recipe>)
-                    }
+                    <Recipe></Recipe>
                 </div>
             </div>
         </div>
