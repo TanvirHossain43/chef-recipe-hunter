@@ -14,7 +14,7 @@ import Register from '../Pages/Register/Register';
 import ChefDetails from '../Pages/ChefDetails/ChefDetails';
 import PrivateRoutes from './PrivateRoutes/PrivateRoutes';
 import Error from '../Pages/Error/Error';
-import Recipe from '../components/Recipe/Recipe';
+import Recipes from '../components/Recipes/Recipes';
 
 
 
@@ -59,22 +59,10 @@ const router = createBrowserRouter([
         path: ':id',
         element: <ViewRecipe></ViewRecipe>,
         loader: ({ params }) => fetch(`http://localhost:5000/chefdata/${params.id}`)
-      },
-
-    ]
-  },
-  {
-    path: 'chef',
-    element: <ViewRecipe></ViewRecipe>,
-    children: [
-      {
-        path: ':id',
-        element: <Recipe></Recipe>,
-        loader: ({ params }) => fetch(`http://localhost:5173/chef/${params.id}`)
       }
     ]
-
   },
+  
   {
     path: '*',
     element: <Error></Error>

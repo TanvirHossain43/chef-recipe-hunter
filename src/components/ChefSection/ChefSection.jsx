@@ -12,7 +12,7 @@ const ChefSection = () => {
     }, [])
     return (
         <div className='mt-10' >
-            <h3 className='text-5xl font-extrabold text-center mb-5 '>Chef Section</h3>
+            <h3 className='text-5xl font-extrabold text-center mb-10 text-green-900 '>Popular Chefs</h3>
             <div className='grid md:grid-cols-3 justify-items-center items-end gap-y-5 gap-x-0'>
                 {
                     chefs.map(chef => <Chef

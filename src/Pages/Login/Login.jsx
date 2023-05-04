@@ -4,9 +4,9 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 
 const Login = () => {
-    
-    const { signInUser,googleSignIn,gitLogIn } = useContext(AuthContext)
-   
+
+    const { signInUser, googleSignIn, gitLogIn } = useContext(AuthContext)
+
     const navigate = useNavigate()
     const location = useLocation();
     const from = location.state?.from?.pathname || '/'
@@ -19,6 +19,7 @@ const Login = () => {
         const email = form.email.value;
         const password = form.password.value;
         console.log(email, password)
+
 
         signInUser(email, password)
             .then(result => {
@@ -34,26 +35,26 @@ const Login = () => {
 
     const handleGoogleSignIn = () => {
         googleSignIn()
-        .then(result =>{
-            const loggedUser = result.user;
-            console.log(loggedUser)
-            navigate(from, { replace: true })
-        })
-        .catch(error =>{
-            console.log(error)
-        })
+            .then(result => {
+                const loggedUser = result.user;
+                console.log(loggedUser)
+                navigate(from, { replace: true })
+            })
+            .catch(error => {
+                console.log(error)
+            })
     }
 
-    const githubLogIn = () =>{
+    const githubLogIn = () => {
         gitLogIn()
-        .then(result =>{
-            const loggedUser = result.user;
-            console.log(loggedUser)
-            navigate(from, { replace: true })
-        })
-        .catch(error =>{
-            console.log(error)
-        })
+            .then(result => {
+                const loggedUser = result.user;
+                console.log(loggedUser)
+                navigate(from, { replace: true })
+            })
+            .catch(error => {
+                console.log(error)
+            })
     }
 
     return (
@@ -80,7 +81,7 @@ const Login = () => {
                                 <p>New to this site? <Link to="/register" className='text-emerald-500'>Register</Link></p>
 
                             </div>
-                            
+
                             <div className="form-control mt-6">
                                 <button className="btn btn-primary">Login</button>
                             </div>
@@ -91,7 +92,7 @@ const Login = () => {
                                 <button onClick={handleGoogleSignIn} className="btn btn-outline btn-success">Login with Google</button>
                             </div>
                             <div>
-                                <button onClick={githubLogIn } className="btn btn-outline ">Login with Github</button>
+                                <button onClick={githubLogIn} className="btn btn-outline ">Login with Github</button>
                             </div>
                         </div>
                     </div>

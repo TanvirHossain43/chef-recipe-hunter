@@ -2,7 +2,8 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faThumbsUp } from '@fortawesome/free-solid-svg-icons'
 import { Link, useLoaderData } from 'react-router-dom';
-import Recipe from '../../components/Recipe/Recipe';
+import Recipe from '../../components/Recipes/Recipes';
+import Recipes from '../../components/Recipes/Recipes';
 
 const ChefDetails = ({ detail }) => {
     const { name, id, picture, experience, bio, likes, recipes } = detail;
@@ -28,9 +29,9 @@ const ChefDetails = ({ detail }) => {
                 </div>
             </div>
             <div>
-                <h2>New Section</h2>
+                <h2 className='text-center font-bold'>New Section</h2>
                 <div>
-                    <Recipe></Recipe>
+                    <Recipes></Recipes>
                 </div>
             </div>
         </div>
