@@ -31,7 +31,7 @@ const Header = () => {
                             <NavLink to="/register" className={({ isActive }) => (isActive ? activeLink : "")}>Register</NavLink>
                         </ul>
                     </div>
-                    <a className="btn btn-ghost normal-case text-xl">Food Village</a>
+                    <a className=" normal-case font-mono text-3xl ml-3 font-bold text-orange-400">Food Village</a>
                 </div>
                 <div className="navbar-center hidden lg:flex text-xl">
 
@@ -54,7 +54,7 @@ const Header = () => {
                             <Link onClick={handleLogOut} className="btn">Logout</Link>
                         </div>
                             :
-                            <Link to="/login" className="btn">Login</Link>
+                            <Link to="/login" className="btn mr-4">Login</Link>
                     }
 
 
