@@ -1,5 +1,5 @@
 import React, { createContext, useEffect, useState } from 'react';
-import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut,GoogleAuthProvider,signInWithPopup ,GithubAuthProvider} from "firebase/auth";
+import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut, GoogleAuthProvider, signInWithPopup, GithubAuthProvider } from "firebase/auth";
 import app from '../firebase/firebase.config'
 
 export const AuthContext = createContext(null)
@@ -7,8 +7,8 @@ const auth = getAuth(app);
 
 
 const AuthProviders = ({ children }) => {
-    const googleProvider = new GoogleAuthProvider() 
-    const gitProvider =new GithubAuthProvider()
+    const googleProvider = new GoogleAuthProvider()
+    const gitProvider = new GithubAuthProvider()
 
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true)
@@ -17,6 +17,7 @@ const AuthProviders = ({ children }) => {
         setLoading(true)
         return createUserWithEmailAndPassword(auth, email, password)
     }
+
 
     const signInUser = (email, password) => {
         setLoading(true)
@@ -29,16 +30,16 @@ const AuthProviders = ({ children }) => {
     }
 
     // google sign in
-     const googleSignIn = () =>{
+    const googleSignIn = () => {
         setLoading(true)
-       return signInWithPopup(auth,googleProvider)
-     }
+        return signInWithPopup(auth, googleProvider)
+    }
 
     //  github login
 
-    const gitLogIn = () =>{
+    const gitLogIn = () => {
         setLoading(true);
-        return signInWithPopup(auth,gitProvider)
+        return signInWithPopup(auth, gitProvider)
     }
 
     useEffect(() => {
@@ -59,7 +60,8 @@ const AuthProviders = ({ children }) => {
         logOut,
         loading,
         googleSignIn,
-        gitLogIn
+        gitLogIn,
+        
 
     }
 

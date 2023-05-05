@@ -15,6 +15,7 @@ import ChefDetails from '../Pages/ChefDetails/ChefDetails';
 import PrivateRoutes from './PrivateRoutes/PrivateRoutes';
 import Error from '../Pages/Error/Error';
 import Recipes from '../components/Recipes/Recipes';
+import Recipe from '../components/Recipes/Recipe';
 
 
 
@@ -36,15 +37,7 @@ const router = createBrowserRouter([
         path: "login",
         element: <Login></Login>
       },
-      // {
-      //   path: "recipes",
-      //   element: <ViewRecipe></ViewRecipe>
-      // },
-      // {
-      //   path: 'chef:id',
-      //   element: <ViewRecipe></ViewRecipe>,
-
-      // },
+     
       {
         path: 'register',
         element: <Register></Register>
@@ -59,10 +52,10 @@ const router = createBrowserRouter([
         path: ':id',
         element: <ViewRecipe></ViewRecipe>,
         loader: ({ params }) => fetch(`https://chef-recipe-hunter-server-tanvirhossain43.vercel.app/chefdata/${params.id}`)
-      }
+      },
+      
     ]
-  },
-  
+  },  
   {
     path: '*',
     element: <Error></Error>

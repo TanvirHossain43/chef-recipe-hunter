@@ -13,15 +13,16 @@ const Register = () => {
         const password = form.password.value;
         const name = form.name.value;
         const photo = form.photo.value;
-        console.log(email, password, name, photo)
+        // console.log(email, password, name, photo)
 
-        if (password.length< 6) {
+
+        if (password.length < 6) {
             setError('Password should be more than 6 characters')
             return;
         }
 
 
-        createUser(email, password)
+        createUser(email, password, name, photo)
             .then(result => {
                 const signedUser = result.user;
                 console.log(signedUser)
@@ -32,6 +33,9 @@ const Register = () => {
                 console.log(error)
                 setError(error.message)
             })
+
+
+
     }
     return (
         <div>
@@ -41,7 +45,9 @@ const Register = () => {
                         <h1 className="text-5xl font-bold">Register now!</h1>
 
                     </div>
+
                     <div className="  w-full max-w-sm shadow-2xl bg-base-100 mx-auto mt-5 rounded-xl">
+
                         <form onSubmit={handleSignUp} className="card-body">
                             <div className="form-control">
                                 <label className="label">

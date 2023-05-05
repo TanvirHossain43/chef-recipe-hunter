@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart, faHeartCrack,faStar,faStarHalfStroke } from '@fortawesome/free-solid-svg-icons'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Link } from 'react-router-dom';
 
 const Recipe = ({ recipe }) => {
 
@@ -42,7 +43,7 @@ const Recipe = ({ recipe }) => {
 
                         <div className='flex items-center justify-evenly'>
                             <div>
-                                <button className='mt-3' onClick={handleButtonClick}>{selected ? <FontAwesomeIcon className='text-5xl' icon={faHeart} /> : <FontAwesomeIcon className='text-5xl' icon={faHeartCrack} />} </button>
+                                <button title='Bookmark' className='mt-3' onClick={handleButtonClick}>{selected ? <FontAwesomeIcon className='text-5xl text-orange-500' icon={faHeart} /> : <FontAwesomeIcon className='text-5xl' icon={faHeartCrack} />} </button>
                                 <ToastContainer />
                             </div>
                             <div>

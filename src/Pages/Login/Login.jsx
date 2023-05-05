@@ -6,6 +6,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 const Login = () => {
 
     const { signInUser, googleSignIn, gitLogIn } = useContext(AuthContext)
+    const [error,setError] = useState('')
 
     const navigate = useNavigate()
     const location = useLocation();
@@ -26,9 +27,11 @@ const Login = () => {
                 const loggedUser = result.user;
                 console.log(loggedUser)
                 navigate(from, { replace: true })
+                
             })
             .catch(error => {
-                console.log(error)
+                
+                setError('Enter valid email and password')
             })
 
     }
@@ -79,6 +82,7 @@ const Login = () => {
                                 </label>
                                 <input type="password" placeholder="password" className="input input-bordered" name='password' required />
                                 <p>New to this site? <Link to="/register" className='text-emerald-500'>Register</Link></p>
+                                <p className='text-red-700'>{error}</p>
 
                             </div>
 

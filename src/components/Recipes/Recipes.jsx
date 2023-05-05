@@ -9,7 +9,7 @@ const Recipes = () => {
       .then(res => res.json())
       .then(data => setRecipes(data))
   }, [])
-  console.log(recipes)
+  // console.log(recipes)
   
 
   return (
